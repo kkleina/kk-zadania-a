@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin-ext');
+
+$blue: #3fa6fd;
+$lightColor: #fefefe;
+$secondLightColor: #f7f7f7;
+$fontColor: #7c92b8;
+$fontFamily: 'Roboto', sans-serif;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #212121;
+  color: $lightColor;
+  font-family: $fontFamily;
+  margin: 0;
+  padding: 10px;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 768px;
+  width: 100%;
+}
+
+section {
+  background: #303030;
+  box-shadow: 0 3px 5px 1px rgba(0,0,0,.15);
+  margin: 50px 0 100px;
+  padding: 20px 20px 40px;
+}
+
+h2 {
+  margin-top: 40px;
+}
+
+p {
+  padding: 0 20px;
+
+  a {
+    border-bottom: 1px dotted $secondLightColor;
+    color: $secondLightColor;
+
+    &:hover {
+      border-bottom-style: solid;
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+
+// ZADANIE 1
+
+input {
+  font-size: 14px;
+  font-family: $fontFamily;
+  margin: 5px 0;
+  max-width: 300px;
+  padding: 5px 10px;
+  width: 100%;
+}
+
+
+// ZADANIE 2
+
+#dropdown-menu {
+  margin: 0 auto;
+  max-width: 300px;
+  position: relative;
+
+
+  ul {
+    display: none;
+    list-style: none;
+    margin-top: 30px;
+    max-width: 300px;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+
+    li {
+      overflow: hidden;
+
+      &:first-of-type {
+        border-radius: 3px 3px 0 0;
+      }
+
+      &:last-of-type {
+        border-radius: 0 0 3px 3px;
+      }
+
+      a {
+        border-radius: 0;
+        text-decoration: none;
+        position: relative;
+        z-index: 2;
+
+        &:hover {
+          background: $secondLightColor;
+          border-left: 4px solid $blue;
+          padding-left: 16px;
+        }
+
+        &:not(:last-of-type) {
+          border-bottom: 1px solid #e0e0e0;
+        }
+      }
+    }
+
+    svg, i, .fas {
+      margin-right: 10px;
+    }
+
+    &::before {
+      background: $lightColor;
+      content: "";
+      display: block;
+      height: 20px;
+      position: absolute;
+      right: 15px;
+      top: -10px;
+      transform: rotate(45deg);
+      width: 20px;
+      z-index: 1;
+    }
+  }
+}
+
+.btn {
+  background: $lightColor;
+  border: 0;
+  border-radius: 3px;
+  color: $fontColor;
+  cursor: pointer;
+  display: block;
+  font: 700 14px $fontFamily;
+  max-width: 300px;
+  padding: 15px 20px;
+  text-align: left;
+  transition: background .5s;
+  width: 100%;
+
+  .fa-bars {
+    margin-right: 10px;
+  }
+
+  .fa-chevron-down {
+    float: right;
+    transform: rotate(0);
+    transition: transform .5s;
+  }
+}
+
+.active {
+  >.btn {
+    background: $blue;
+    color: $lightColor;
+  }
+
+  .fa-chevron-down {
+    transform: rotate(-180deg);
+  }
+
+  ul {
+    display: block !important;
+  }
+}
+
+
+// ZADANIE 3
+
+#people-list {
+  background: $lightColor;
+  border-collapse: collapse;
+  border-radius: 3px;
+  color: #000;
+  font-size: 14px;
+  overflow: hidden;
+  width: 100%;
+
+  thead {
+    background: $secondLightColor;
+    border-bottom: 2px solid #e0e0e0;
+    text-align: left;
+  }
+
+  tbody {
+    tr:hover {
+      background: #e0e0e0;
+    }
+  }
+
+  tr {
+
+    &:nth-of-type(even) {
+      background: $secondLightColor;
+    }
+
+    &:not(:first-of-type) {
+      border-top: 1px solid #e0e0e0;
+    }
+  }
+
+  th, td {
+    display: inline-block;
+    padding: 10px;
+
+    &:nth-child(1),
+    &:nth-child(4) {
+      width: 15%;
+    }
+
+    &:nth-child(2),
+    &:nth-child(3) {
+      width: 35%;
+    }
+  }
+
+  tfoot {
+    background: $secondLightColor;
+    border-top: 2px solid #e0e0e0;
+
+    ul {
+      list-style: none;
+      padding: 5px;
+      text-align: center;
+    }
+
+    li {
+      background: none;
+      border: 1px solid #e0e0e0;
+      color: $blue;
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 700;
+      margin: 0 2px;
+      line-height: 25px;
+      text-align: center;
+      min-width: 25px;
+
+      a {
+        color: $blue;
+        display: block;
+
+        &:hover {
+          color: $lightColor;
+        }
+      }
+
+      &.active,
+      &:hover:not(.disabled) {
+        background: $blue;
+        border-color: $blue;
+        color: $lightColor;
+      }
+
+      &.disabled {
+        display: none;
+      }
+    }
+  }
+}
+
+footer {
+  font-size: 14px;
+  text-align: center;
+}
+
+@media (max-width: 425px) {
+  section {
+    padding: 10px 10px 20px;
+  }
+
+  #people-list {
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin-ext");
+* {
+  box-sizing: border-box; }
+
+body {
+  background: #212121;
+  color: #fefefe;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 10px; }
+
+.container {
+  margin: 0 auto;
+  max-width: 768px;
+  width: 100%; }
+
+section {
+  background: #303030;
+  box-shadow: 0 3px 5px 1px rgba(0, 0, 0, 0.15);
+  margin: 50px 0 100px;
+  padding: 20px 20px 40px; }
+
+h2 {
+  margin-top: 40px; }
+
+p {
+  padding: 0 20px; }
+  p a {
+    border-bottom: 1px dotted #f7f7f7;
+    color: #f7f7f7; }
+    p a:hover {
+      border-bottom-style: solid; }
+
+a {
+  text-decoration: none; }
+
+input {
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  margin: 5px 0;
+  max-width: 300px;
+  padding: 5px 10px;
+  width: 100%; }
+
+#dropdown-menu {
+  margin: 0 auto;
+  max-width: 300px;
+  position: relative; }
+  #dropdown-menu ul {
+    display: none;
+    list-style: none;
+    margin-top: 30px;
+    max-width: 300px;
+    padding: 0;
+    position: absolute;
+    width: 100%; }
+    #dropdown-menu ul li {
+      overflow: hidden; }
+      #dropdown-menu ul li:first-of-type {
+        border-radius: 3px 3px 0 0; }
+      #dropdown-menu ul li:last-of-type {
+        border-radius: 0 0 3px 3px; }
+      #dropdown-menu ul li a {
+        border-radius: 0;
+        text-decoration: none;
+        position: relative;
+        z-index: 2; }
+        #dropdown-menu ul li a:hover {
+          background: #f7f7f7;
+          border-left: 4px solid #3fa6fd;
+          padding-left: 16px; }
+        #dropdown-menu ul li a:not(:last-of-type) {
+          border-bottom: 1px solid #e0e0e0; }
+    #dropdown-menu ul svg, #dropdown-menu ul i, #dropdown-menu ul .fas {
+      margin-right: 10px; }
+    #dropdown-menu ul::before {
+      background: #fefefe;
+      content: "";
+      display: block;
+      height: 20px;
+      position: absolute;
+      right: 15px;
+      top: -10px;
+      transform: rotate(45deg);
+      width: 20px;
+      z-index: 1; }
+
+.btn {
+  background: #fefefe;
+  border: 0;
+  border-radius: 3px;
+  color: #7c92b8;
+  cursor: pointer;
+  display: block;
+  font: 700 14px "Roboto", sans-serif;
+  max-width: 300px;
+  padding: 15px 20px;
+  text-align: left;
+  transition: background .5s;
+  width: 100%; }
+  .btn .fa-bars {
+    margin-right: 10px; }
+  .btn .fa-chevron-down {
+    float: right;
+    transform: rotate(0);
+    transition: transform .5s; }
+
+.active > .btn {
+  background: #3fa6fd;
+  color: #fefefe; }
+
+.active .fa-chevron-down {
+  transform: rotate(-180deg); }
+
+.active ul {
+  display: block !important; }
+
+#people-list {
+  background: #fefefe;
+  border-collapse: collapse;
+  border-radius: 3px;
+  color: #000;
+  font-size: 14px;
+  overflow: hidden;
+  width: 100%; }
+  #people-list thead {
+    background: #f7f7f7;
+    border-bottom: 2px solid #e0e0e0;
+    text-align: left; }
+  #people-list tbody tr:hover {
+    background: #e0e0e0; }
+  #people-list tr:nth-of-type(even) {
+    background: #f7f7f7; }
+  #people-list tr:not(:first-of-type) {
+    border-top: 1px solid #e0e0e0; }
+  #people-list th, #people-list td {
+    display: inline-block;
+    padding: 10px; }
+    #people-list th:nth-child(1), #people-list th:nth-child(4), #people-list td:nth-child(1), #people-list td:nth-child(4) {
+      width: 15%; }
+    #people-list th:nth-child(2), #people-list th:nth-child(3), #people-list td:nth-child(2), #people-list td:nth-child(3) {
+      width: 35%; }
+  #people-list tfoot {
+    background: #f7f7f7;
+    border-top: 2px solid #e0e0e0; }
+    #people-list tfoot ul {
+      list-style: none;
+      padding: 5px;
+      text-align: center; }
+    #people-list tfoot li {
+      background: none;
+      border: 1px solid #e0e0e0;
+      color: #3fa6fd;
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 700;
+      margin: 0 2px;
+      line-height: 25px;
+      text-align: center;
+      min-width: 25px; }
+      #people-list tfoot li a {
+        color: #3fa6fd;
+        display: block; }
+        #people-list tfoot li a:hover {
+          color: #fefefe; }
+      #people-list tfoot li.active, #people-list tfoot li:hover:not(.disabled) {
+        background: #3fa6fd;
+        border-color: #3fa6fd;
+        color: #fefefe; }
+      #people-list tfoot li.disabled {
+        display: none; }
+
+footer {
+  font-size: 14px;
+  text-align: center; }
+
+@media (max-width: 425px) {
+  section {
+    padding: 10px 10px 20px; }
+  #people-list {
+    font-size: 12px; } }
+
+/*# sourceMappingURL=style.css.map */
