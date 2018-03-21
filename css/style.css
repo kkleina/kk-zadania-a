@@ -127,6 +127,8 @@ input {
     background: #f7f7f7;
     border-bottom: 2px solid #e0e0e0;
     text-align: left; }
+    #people-list thead th {
+      float: left; }
   #people-list tbody tr:hover {
     background: #e0e0e0; }
   #people-list tr:nth-of-type(even) {
